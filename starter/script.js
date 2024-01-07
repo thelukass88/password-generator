@@ -104,11 +104,15 @@ button.addEventListener('click', function() {
   const specialCharactersInput = confirm ("Would you like to use special characters?")
 
   console.log(userInput);
+  console.log(lowercaseInput);
+  console.log(uppercaseInput);
+  console.log(numbersInput);
+  console.log(specialCharactersInput);
 });
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  
+  var passwordLength = userInput
 
 
 }
