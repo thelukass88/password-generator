@@ -88,47 +88,78 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// question: password length?
-const button = document.querySelector('button');
-// Add an event listener to the button that listens for the click event
-button.addEventListener('click', function() {
-  // Display the prompt when the button is clicked
-  // question: would you like Lowercase?
-  // question: would you like Uppercase
-  // question: would you like Numeric
-  // question: would you like Special characters ($@%&*, etc)
-  const userInput = prompt('How long would you like your password to be? (min 8 max 128)');
-  const lowercaseInput = confirm ("Would you like to use lowercase?")
-  const uppercaseInput = confirm ("Would you like to use uppercase?")
-  const numbersInput = confirm ("Would you like to use numbers?")
-  const specialCharactersInput = confirm ("Would you like to use special characters?")
-
-  console.log(userInput);
-  console.log(lowercaseInput);
-  console.log(uppercaseInput);
-  console.log(numbersInput);
-  console.log(specialCharactersInput);
-});
+let passwordLeng;
+let specialChars; 
+let numericChars;
+let lowercaseChars;
+let uppercaseChars;
 
 // Function to prompt user for password options
-function getPasswordOptions() {
-  var passwordLength = userInput
+const generateBtn = document.getElementById('generate');
 
+function getPasswordOptions() {
+  generateBtn.addEventListener('click', getPasswordOptions);
+  passwordLeng = window.prompt("How long would you like your password to be?");
+  specialChars = window.confirm("Would you like to use Special Characters?");
+  numericChars = window.confirm("Woud you like to use Numbers?");
+  lowercaseChars = window.confirm("Would you like to use Lower Case Characters?");
+  uppercaseChars = window.confirm("Would you like to use Upper Case Characters?");
 
 }
+
+let string = "this password has these options " + passwordLeng
+
+console.log(string);
+console.log(getPasswordOptions());
+console.log(passwordLeng);
+console.log(specialChars);
+console.log(numericChars);
+console.log(lowercaseChars);
+console.log(uppercaseChars)
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+  if (specialChars === true){
+    specialChars = specialCharacters
+  } else if (specialChars === false){
+    specialChars = null
+  }
+  if (numericChars === true){
+    numericChars = numericCharacters
+  } else if (numericChars === false){
+    numericChars = null
+  }
+  if (lowercaseChars === true){
+    lowercaseChars = lowerCasedCharacters
+  } else if (lowercaseChars === false){
+    lowercaseChars = null
+  }
+  if (uppercaseChars === true){
+    uppercaseChars = upperCasedCharacters
+  } else if (uppercaseChars === false){
+    upperCasedCharacters = null
+  }
+
+
 
 }
+console.log(getRandom());
+// Add string 
+// Use a for loop 
+// Start with a letter (one array) 
+
 
 // Function to generate password with user input
-function generatePassword() {
+function generatePassword(length, ) {
+  if (confirm === true){
+
+  }
 
 }
 
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+
 
 // Write password to the #password input
 function writePassword() {
