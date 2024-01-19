@@ -100,49 +100,55 @@ const generateBtn = document.getElementById('generate');
 function getPasswordOptions() {
   generateBtn.addEventListener('click', getPasswordOptions);
   passwordLeng = window.prompt("How long would you like your password to be?");
+  if (isNaN(passwordLeng) === true){
+    alert("This is not a number!")
+    return 
+  }
+  if (passwordLeng < 8 || passwordLeng > 128){
+    alert("Password must be betwee 8 and 128 characters!")
+    return
+  }
+
   specialChars = window.confirm("Would you like to use Special Characters?");
   numericChars = window.confirm("Woud you like to use Numbers?");
   lowercaseChars = window.confirm("Would you like to use Lower Case Characters?");
   uppercaseChars = window.confirm("Would you like to use Upper Case Characters?");
+  if (specialChars === false && numericChars === false && lowercaseChars === false && upperCaseChars === false){
+    alert("Must select at least one set of characters!")
+    return
+  }
+
+  var passwordOptions = {
+    passwordLeng: passwordLeng,
+    specialChars: specialChars,
+    numericChars: numericChars,
+    lowercaseChars: lowercaseChars,
+    uppercaseChars: uppercaseChars
+
+  }
+  return passwordOptions
 
 }
 
-let string = "this password has these options " + passwordLeng
 
-console.log(string);
 console.log(getPasswordOptions());
 console.log(passwordLeng);
 console.log(specialChars);
 console.log(numericChars);
 console.log(lowercaseChars);
-console.log(uppercaseChars)
+console.log(uppercaseChars);
+
+let string = "this password has these options " + passwordLeng
+
+console.log(string);
 
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  if (specialChars === true){
-    specialChars = specialCharacters
-  } else if (specialChars === false){
-    specialChars = null
-  }
-  if (numericChars === true){
-    numericChars = numericCharacters
-  } else if (numericChars === false){
-    numericChars = null
-  }
-  if (lowercaseChars === true){
-    lowercaseChars = lowerCasedCharacters
-  } else if (lowercaseChars === false){
-    lowercaseChars = null
-  }
-  if (uppercaseChars === true){
-    uppercaseChars = upperCasedCharacters
-  } else if (uppercaseChars === false){
-    upperCasedCharacters = null
-  }
+  var randIndex = Math.floor(Math.random() * arr.length);
+  var randElement = arr[randIndex];
 
-
-
+  return randElement;
 }
 console.log(getRandom());
 // Add string 
@@ -151,10 +157,9 @@ console.log(getRandom());
 
 
 // Function to generate password with user input
-function generatePassword(length, ) {
-  if (confirm === true){
-
-  }
+function generatePassword() {
+var options = getPasswordOptions();
+var selectedChars = []
 
 }
 
