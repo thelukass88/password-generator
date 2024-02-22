@@ -1,4 +1,4 @@
-var passwordLeng = 8;
+var passwordLeng = 0;
 var userChoice = [];
 
 // Array of special characters to be included in password
