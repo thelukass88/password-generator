@@ -1,7 +1,7 @@
 # Week 5 Homewor - Password Generator
 ![Github licence](https://img.shields.io/badge/your_licence:-MIT-blue.svg)
 ## Links
-GitHub Repo: https://github.com/thelukass88/password-generator
+GitHub Repo: https://github.com/thelukass88/password-generator<br>
 Deployed Site: https://thelukass88.github.io/password-generator/
 
 ## Description
