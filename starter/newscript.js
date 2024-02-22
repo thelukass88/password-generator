@@ -29,7 +29,8 @@ generateBtn.addEventListener('click', writePassword);
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  //userChoice = [];
+//resets array
+  userChoice = [];
 //Deals with password length and alerts if numbers are not entered, or parameters not met
   passwordLeng = parseInt(prompt("How long would you like your password to be? (Must be between 8-128 characters)"));
   if (isNaN(passwordLeng) === true){
@@ -66,6 +67,13 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+
+  var passwordRand = "";
+  for(var i = 0; i < passwordLeng; i++) {
+    var randomiser = Math.floor(Math.random() * userChoice.length);
+    passwordRand = passwordRand + userChoice[randomiser];
+  }
+  return passwordRand;
 
 }
 
