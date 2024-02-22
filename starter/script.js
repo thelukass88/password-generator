@@ -138,10 +138,9 @@ console.log(numericChars);
 console.log(lowercaseChars);
 console.log(uppercaseChars);
 
-let string = "this password has these options " + passwordLeng
 
-console.log(string);
-
+console.log(passwordOptions);
+//checking ssp
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -158,8 +157,9 @@ console.log(getRandom());
 
 // Function to generate password with user input
 function generatePassword() {
-var options = getPasswordOptions();
-var selectedChars = []
+  var options = getPasswordOptions(passwordOptions);
+  var selectedChars = [];
+  return
 
 }
 
