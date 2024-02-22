@@ -96,9 +96,11 @@ let uppercaseChars;
 
 // Function to prompt user for password options
 const generateBtn = document.getElementById('generate');
+generateBtn.onclick = function(){
+  getPasswordOptions();
+};
 
 function getPasswordOptions() {
-  generateBtn.addEventListener('click', getPasswordOptions);
   passwordLeng = window.prompt("How long would you like your password to be?");
   if (isNaN(passwordLeng) === true){
     alert("This is not a number!")
@@ -131,7 +133,7 @@ function getPasswordOptions() {
 }
 
 
-console.log(getPasswordOptions());
+
 console.log(passwordLeng);
 console.log(specialChars);
 console.log(numericChars);
@@ -140,7 +142,7 @@ console.log(uppercaseChars);
 
 
 console.log(passwordOptions);
-//checking ssp
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
