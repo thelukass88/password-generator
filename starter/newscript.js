@@ -1,8 +1,6 @@
 var passwordLeng = 8;
 var userChoice = [];
 
-
-
 // Array of special characters to be included in password
 var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', 
   ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
@@ -26,6 +24,18 @@ var upperCasedCharacters = [
 var generateBtn = document.querySelector('#generate');
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+// Write password to the #password input
+function writePassword() {
+  var correctInput = getPasswordOptions();
+  if (correctInput) {
+    var password = generatePassword();
+    var passwordText = document.querySelector('#password');
+  
+    passwordText.value = password;
+  }
+
+}
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -77,13 +87,5 @@ function generatePassword() {
 
 }
 
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
-}
 
 
